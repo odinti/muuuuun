@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+.panels {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel {
+    min-height: 33vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem;
+    color: white;
+    background-position: center center;
+    background-size: cover;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.panel > div {
+    z-index: 1;
+
+}
+
+.panel h2 {
+    border-bottom: 2px solid white;
+    width: 200px;
+    padding-bottom:  1.25rem;
+    margin-bottom: .5rem;
+}
+
+.panel-sm {
+    width: 100%;
+    background-color: red;
+}
+
+.panel-lg {
+    width: 100%;
+    background-color: blue;
+}
+
+@media screen and (min-width: 720px) {
+    .panel-sm {
+        width: 50%;
+    }
+    
+    .panel-lg {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .panel {
+        min-height: 50vh;
+    }
+    .panel-sm {
+        width: 40%;
+    }
+    
+    .panel-lg {
+        width: 60%;
+    }
+}
+
+/* .panel:nth-child(1) {
+    background-image: url(https://picsum.photos/seed/1/1000/800);
+}
+.panel:nth-child(2) {
+    background-image: url(https://picsum.photos/seed/2/1000/1200);
+}
+.panel:nth-child(3) {
+    background-image: url(https://picsum.photos/seed/3/1000/1200);
+}
+.panel:nth-child(4) {
+    background-image: url(https://picsum.photos/seed/4/1000/800);
+}
+.panel:nth-child(5) {
+    background-image: url(https://picsum.photos/seed/5/1000/800);
+}
+.panel:nth-child(6) {
+    background-image: url(https://picsum.photos/seed/6/1000/1200);
+} */
+
+.panel-bg {
+    position: absolute;
+    top:  0;
+    left: 0;
+    width: 100%;
+}
+
+.panel > div:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: opacity 600ms;
+}
+
+.panel:hover > div:after {
+    opacity: 0;
+}
+
+.panel:nth-child(1) > div:after {
+    background-color: rgba(200,129,100,.9);
+}
+.panel:nth-child(2) > div:after {
+    background-color: rgba(123,129,100,.9);
+}
+.panel:nth-child(3) > div:after {
+    background-color: rgba(200,129,123,.9);
+}
+.panel:nth-child(4) > div:after {
+    background-color: rgba(200,123,100,.9);
+}
+.panel:nth-child(5) > div:after {
+    background-color: rgba(123,123,123,.9);
+}
+.panel:nth-child(6) > div:after {
+    background-color: rgba(123,129,100,.9);
+}
